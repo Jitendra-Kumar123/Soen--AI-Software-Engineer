@@ -30,7 +30,13 @@ const Register = () => {
 
       navigate('/')
     }).catch((err) => {
-      console.log(err.response.data)
+      if (err.response && err.response.data) {
+        console.log(err.response.data)
+        setError(err.response.data.message || 'Registration failed')
+      } else {
+        console.log('Network error:', err.message)
+        setError('Network error. Please check your connection and try again.')
+      }
     }).finally(() => {
       setLoading(false)
     })

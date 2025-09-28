@@ -23,13 +23,4 @@ projectSchema.index({ name: 1 }, { unique: true });
 
 const Project = mongoose.model("Project", projectSchema)
 
-
-Project.collection.dropIndex('name_1_users_1', (err, result) => {
-    if (err) {
-        console.log('Index does not exist or error dropping:', err);
-    } else {
-        console.log('Dropped index name_1_users_1');
-    }
-});
-
 export default Project

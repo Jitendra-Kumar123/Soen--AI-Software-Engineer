@@ -65,11 +65,9 @@ const Project = () => {
 
 
         receiveMessage("project-message", (data) => {
-          if (data.message) {
-            setFileTree(data.message.fileTree || {});
-            if (data.message.fileTree) {
-              webContainer?.mount(data.message.fileTree);
-            }
+          if (data.fileTree) {
+            setFileTree(data.fileTree);
+            webContainer?.mount(data.fileTree);
           }
           appendIncomingMessage(data);
         });

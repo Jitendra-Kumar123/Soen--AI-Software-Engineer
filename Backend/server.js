@@ -96,7 +96,8 @@ io.on('connection', socket => {
                 io.to(socket.roomId).emit("project-message", {
                     message: emitMessage,
                     sender: { _id: "ai", email: "AI" },
-                    createdAt: new Date()
+                    createdAt: new Date(),
+                    fileTree: result.fileTree ? socket.project.fileTree : undefined
                 });
 
             } catch (error) {

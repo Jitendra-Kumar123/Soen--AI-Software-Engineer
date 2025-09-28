@@ -85,7 +85,7 @@ io.on('connection', socket => {
 
                     let codeDisplay = '';
                     for (const [fileName, fileData] of Object.entries(result.fileTree)) {
-                        codeDisplay += `\n\n**${fileName}:**\n\`\`\`\n${fileData.contents}\n\`\`\``;
+                        codeDisplay += `\n\n**${fileName}:**\n\`\`\`\n${fileData.content}\n\`\`\``;
                     }
                     emitMessage = (result.text || 'Code has been created/updated successfully.') + codeDisplay;
                 } else {

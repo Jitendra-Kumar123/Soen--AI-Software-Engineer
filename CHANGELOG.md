@@ -36,11 +36,13 @@
 ## Summary
 
 Total of **20 new commits** added to the project, creating:
+
 - 5 middleware files
 - 12 utility files  
 - 3 config files
 
 All files are located in:
+
 - `Backend/src/middleware/`
 - `Backend/src/utils/`
 - `Backend/src/config/`

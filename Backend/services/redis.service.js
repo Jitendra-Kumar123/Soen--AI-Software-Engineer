@@ -14,7 +14,12 @@ const redisClient = new Redis({
     lazyConnect: true
 })
 
-redisClient.on("connect", () => console.log("Redis connected"))
+redisClient.connect().then(() => {
+    console.log("Redis connected")
+}).catch((err) => {
+    console.warn("Redis connection failed:", err.message)
+})
+
 redisClient.on("error", (err) => console.error("Redis error:", err.message))
 
 export default redisClient;

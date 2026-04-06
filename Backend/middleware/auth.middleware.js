@@ -19,9 +19,17 @@ export const authUser = async function(req, res, next){
             console.warn("Redis unavailable, skipping blacklist check:", redisErr.message);
         }
 
-        const decoded = jwt.verify(token, process.env.JWT_SECRET);
-        req.user = decoded;
-        next();
+        try {
+            const decoded = jwt.verify(token, process.env.JWT_SECRET);
+            console.log("DECODED:", decoded);
+
+            req.user = decoded;
+            next();
+        } catch (err) {
+            console.log("JWT ERROR:", err.message);
+
+            return res.status(401).send({ error: "Unauthorized user" });
+        }
     } catch (error){
         res.status(401).send({error: "Unauthorized user"});
     }

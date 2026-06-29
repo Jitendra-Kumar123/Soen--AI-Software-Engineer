@@ -35,7 +35,7 @@
 
 ## Summary
 
-Total of **20 new commits** added to the project, creating:
+Total of **20 new features** added to the project, creating:
 
 - 5 middleware files
 - 12 utility files  
@@ -48,3 +48,5 @@ All files are located in:
 - `Backend/src/config/`
 
 These additions provide a solid infrastructure for the MERN stack application with reusable middleware and utilities.
+
+extra features 

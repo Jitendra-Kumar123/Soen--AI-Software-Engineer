@@ -1027,7 +1027,7 @@ git push origin feature/your-feature
 5. Open a Pull Request
 
 ---
-
+<!-- 
 # 📸 Screenshots
 
 > Replace these placeholders with actual screenshots.
@@ -1078,7 +1078,7 @@ docs/screenshots/editor.png
 docs/screenshots/webcontainer.png
 ```
 
----
+--- -->
 
 # 🌟 Project Highlights
 

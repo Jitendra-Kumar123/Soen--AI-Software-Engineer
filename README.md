@@ -22,12 +22,11 @@
 - Features
 - Technology Stack
 - System Design
-- High-Level Architecture
+- Complete System Architecture
 - Component Architecture
 - Backend Architecture
 - Authentication Flow
 - AI Workflow
-- Request Lifecycle
 - Database Design
 - Deployment Architecture
 - Folder Structure
@@ -371,7 +370,6 @@ Backend --> Groq["Groq API"]
 
 ---
 
-
 # 🧠 AI System Design
 
 ```mermaid
@@ -401,7 +399,6 @@ Editor --> Runtime["WebContainer"]
 ```
 
 ---
-
 
 # 🏗 Design Principles
 
@@ -844,19 +841,19 @@ Contributions are welcome and appreciated.
 git checkout -b feature/your-feature
 ```
 
-3. Commit your changes
+1. Commit your changes
 
 ```bash
 git commit -m "Add new feature"
 ```
 
-4. Push to your branch
+1. Push to your branch
 
 ```bash
 git push origin feature/your-feature
 ```
 
-5. Open a Pull Request
+1. Open a Pull Request
 
 ---
 <!-- 
@@ -959,7 +956,7 @@ https://github.com/Jitendra-Kumar123
 LinkedIn
 
 ```
-https://www.linkedin.com/in/jitendrakumar-dev/
+https://www.linkedin.com/in/jitendrakumarg/
 ```
 
 Portfolio
@@ -1018,7 +1015,7 @@ Special thanks to the open-source community and the technologies that made this 
 
 <p align="center">
 
-### Built with ❤️ using the MERN Stack, Socket.IO, Groq AI, and WebContainer.
+### Built with ❤️ using the MERN Stack, Socket.IO, Groq AI, and WebContainer
 
 **⭐ If you like this project, don't forget to give it a star! ⭐**
 

@@ -1127,19 +1127,20 @@ https://github.com/Jitendra-Kumar123
 LinkedIn
 
 ```
-https://linkedin.com/in/jitendra-kumar39
+https://www.linkedin.com/in/jitendrakumar-dev/
 ```
 
 Portfolio
 
 ```
-https://your-portfolio-link.com
+https://jitendra-portfolio.com
 ```
 
 Email
 
 ```
-your-email@example.com
+.jitendra0202006@gmail.com 
+.jitendrakumar.dev.cs@gmail.com
 ```
 
 ---

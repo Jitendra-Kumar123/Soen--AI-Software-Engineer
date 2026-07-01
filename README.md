@@ -158,31 +158,35 @@ The frontend communicates with the backend through REST APIs for standard operat
 
 ---
 
-# ⚙ High-Level Architecture
+## 🏗 Complete System Architecture
 
 ```mermaid
 flowchart LR
 
-User --> Frontend
+User["Developer"]
 
-Frontend -->|REST APIs| Backend
+User --> Frontend["React + Vite"]
 
-Frontend -->|Socket.IO| SocketServer
+Frontend -->|REST APIs| Backend["Express.js"]
 
-Backend --> MongoDB
+Frontend -->|WebSocket| Socket["Socket.IO"]
 
-Backend --> Redis
+Backend --> Mongo["MongoDB"]
 
-Backend --> GroqAI
+Backend --> Redis["Redis"]
 
-Frontend --> WebContainer
+Backend --> Groq["Groq AI"]
+
+Frontend --> Monaco["Monaco Editor"]
+
+Frontend --> WebContainer["WebContainer Runtime"]
+
+Socket --> Backend
 ```
 
 ---
 
 # 🧩 Component Architecture
-
-## 🧩 Component Architecture
 
 ```mermaid
 flowchart TD
@@ -307,50 +311,6 @@ WebContainer-->>Frontend: Live Preview
 
 ---
 
-# 🔄 Complete Request Lifecycle
-
-```mermaid
-flowchart TD
-
-A[User]
-
-A --> B[React Frontend]
-
-B --> C[Axios REST Request]
-
-C --> D[Express Router]
-
-D --> E[Authentication Middleware]
-
-E --> F[Controller]
-
-F --> G[Service Layer]
-
-G --> H[(MongoDB)]
-
-G --> I[(Redis)]
-
-G --> J[Groq AI]
-
-H --> G
-
-I --> G
-
-J --> G
-
-G --> F
-
-F --> D
-
-D --> C
-
-C --> B
-
-B --> A
-```
-
----
-
 # 🗂 Database Design
 
 ```mermaid
@@ -396,178 +356,52 @@ Date updatedAt
 ```mermaid
 flowchart LR
 
-Developer
+Users["Users"]
 
-Developer --> ReactApp
+Users --> Frontend["Frontend (Vercel)"]
 
-Developer --> Backend
+Frontend --> Backend["Backend (Render)"]
 
-ReactApp --> Vercel
+Backend --> Database["MongoDB Atlas"]
 
-Backend --> Render
+Backend --> Redis["Redis Cloud"]
 
-Render --> MongoDB Atlas
-
-Render --> Redis
-
-Render --> Groq API
-
-User --> Vercel
-
-Vercel --> Render
+Backend --> Groq["Groq API"]
 ```
 
 ---
 
-# 🔁 Real-Time Collaboration Flow
-
-```mermaid
-flowchart LR
-
-UserA --> SocketIO
-
-UserB --> SocketIO
-
-UserC --> SocketIO
-
-SocketIO --> Backend
-
-Backend --> MongoDB
-
-Backend --> AI
-
-Backend --> SocketIO
-
-SocketIO --> UserA
-
-SocketIO --> UserB
-
-SocketIO --> UserC
-```
-
----
 
 # 🧠 AI System Design
 
 ```mermaid
-flowchart TD
-
-Prompt
-
-↓
-
-Backend
-
-↓
-
-Prompt Engineering
-
-↓
-
-Groq API
-
-↓
-
-JSON Response
-
-↓
-
-FileTree Parser
-
-↓
-
-Database Update
-
-↓
-
-Socket Broadcast
-
-↓
-
-Frontend Update
-
-↓
-
-Monaco Editor
-
-↓
-
-WebContainer
-```
-
----
-
-# 📂 File Tree Update Flow
-
-```mermaid
 flowchart LR
 
-AI Response
+User["User Prompt"]
 
-↓
+User --> Backend["Backend"]
 
-Backend
+Backend --> Prompt["Prompt Engineering"]
 
-↓
+Prompt --> Groq["Groq API"]
 
-Merge Existing FileTree
+Groq --> Response["AI Response"]
 
-↓
+Response --> Parser["Parse File Tree"]
 
-MongoDB
+Parser --> Database["MongoDB"]
 
-↓
+Database --> Socket["Socket.IO"]
 
-Socket.IO
+Socket --> Frontend["Frontend"]
 
-↓
+Frontend --> Editor["Monaco Editor"]
 
-Frontend
-
-↓
-
-Monaco Editor
-
-↓
-
-WebContainer
+Editor --> Runtime["WebContainer"]
 ```
 
 ---
 
-# ⚡ Runtime Flow
-
-```mermaid
-flowchart TD
-
-Project Files
-
-↓
-
-WebContainer Boot
-
-↓
-
-Mount FileTree
-
-↓
-
-npm install
-
-↓
-
-npm start
-
-↓
-
-Development Server
-
-↓
-
-Live Preview
-```
-
----
 
 # 🏗 Design Principles
 

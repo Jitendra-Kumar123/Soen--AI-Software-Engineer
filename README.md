@@ -182,27 +182,25 @@ Frontend --> WebContainer
 
 # 🧩 Component Architecture
 
-```mermaid
 flowchart TD
 
-App
+A[App]
 
-App --> Authentication
+A --> B[Authentication]
 
-App --> Dashboard
+A --> C[Dashboard]
 
-App --> Project Workspace
+A --> D[Project Workspace]
 
-Project Workspace --> Chat
+D --> E[Chat Module]
 
-Project Workspace --> File Explorer
+D --> F[File Explorer]
 
-Project Workspace --> Monaco Editor
+D --> G[Monaco Editor]
 
-Project Workspace --> WebContainer
+D --> H[WebContainer]
 
-Project Workspace --> AI Assistant
-```
+D --> I[AI Assistant]
 
 ---
 

@@ -207,21 +207,23 @@ Workspace --> Preview["WebContainer Preview"]
 ```mermaid
 flowchart TD
 
-Routes
+Client["Client"]
 
-Routes --> Controllers
+Client --> Routes["Express Routes"]
 
-Controllers --> Services
+Routes --> Middleware["Authentication Middleware"]
 
-Services --> MongoDB
+Middleware --> Controllers["Controllers"]
 
-Services --> Redis
+Controllers --> Services["Service Layer"]
 
-Services --> Groq API
+Services --> Database["MongoDB"]
 
-Controllers --> Authentication Middleware
+Services --> Cache["Redis"]
 
-Controllers --> Socket.IO
+Services --> AI["Groq AI"]
+
+Controllers --> Socket["Socket.IO Server"]
 ```
 
 ---
